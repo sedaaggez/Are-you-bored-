@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.sedaaggez.areyoubored.WelcomeFragment"
+        android:name="com.sedaaggez.areyoubored.view.WelcomeFragment"
         android:label="Welcome"
         tools:layout="@layout/fragment_welcome">
         <action
@@ -16,12 +16,12 @@
     </fragment>
     <fragment
         android:id="@+id/activityFragment"
-        android:name="com.sedaaggez.areyoubored.ActivityFragment"
+        android:name="com.sedaaggez.areyoubored.view.ActivityFragment"
         android:label="Activity"
         tools:layout="@layout/fragment_activity" />
     <fragment
         android:id="@+id/activitySelectionFragment"
-        android:name="com.sedaaggez.areyoubored.ActivitySelectionFragment"
+        android:name="com.sedaaggez.areyoubored.view.ActivitySelectionFragment"
         android:label="Selection"
         tools:layout="@layout/fragment_activity_selection">
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/filterFragment"
-        android:name="com.sedaaggez.areyoubored.FilterFragment"
+        android:name="com.sedaaggez.areyoubored.view.FilterFragment"
         android:label="Filter"
         tools:layout="@layout/fragment_filter">
         <action
