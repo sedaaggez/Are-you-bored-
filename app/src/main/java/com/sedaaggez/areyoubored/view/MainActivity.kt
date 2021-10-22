@@ -1,10 +1,11 @@
-package com.sedaaggez.areyoubored
+package com.sedaaggez.areyoubored.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
+import com.sedaaggez.areyoubored.R
 
 class MainActivity : AppCompatActivity() {
 
