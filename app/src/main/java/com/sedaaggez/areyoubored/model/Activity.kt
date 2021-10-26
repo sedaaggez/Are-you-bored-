@@ -1,6 +1,6 @@
 package com.sedaaggez.areyoubored.model
 
-data class Bored(
+data class Activity(
     val activity: String,
     val type: String,
     val participants: Double,
