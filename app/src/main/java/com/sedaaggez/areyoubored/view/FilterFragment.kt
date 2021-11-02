@@ -23,7 +23,7 @@ class FilterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         buttonSave.setOnClickListener {
-            val action = FilterFragmentDirections.actionFilterFragmentToActivityFragment()
+            val action = FilterFragmentDirections.actionFilterFragmentToActivityFragment(false)
             Navigation.findNavController(it).navigate(action)
             // TODO: add arguments
         }

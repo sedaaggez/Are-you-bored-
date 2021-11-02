@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ActivityAPIService {
 
-    private val BASE_URL = "https://www.boredapi.com"
+    private val BASE_URL = "http://www.boredapi.com"
     private val api = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())

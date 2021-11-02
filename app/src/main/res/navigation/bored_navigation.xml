@@ -18,7 +18,12 @@
         android:id="@+id/activityFragment"
         android:name="com.sedaaggez.areyoubored.view.ActivityFragment"
         android:label="Activity"
-        tools:layout="@layout/fragment_activity" />
+        tools:layout="@layout/fragment_activity">
+        <argument
+            android:name="isRandom"
+            app:argType="boolean" />
+    </fragment>
+
     <fragment
         android:id="@+id/activitySelectionFragment"
         android:name="com.sedaaggez.areyoubored.view.ActivitySelectionFragment"
