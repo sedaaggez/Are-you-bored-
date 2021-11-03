@@ -24,7 +24,7 @@ class ActivitySelectionFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         buttonRandom.setOnClickListener {
-            val action = ActivitySelectionFragmentDirections.actionActivitySelectionFragmentToActivityFragment()
+            val action = ActivitySelectionFragmentDirections.actionActivitySelectionFragmentToActivityFragment(true)
             Navigation.findNavController(it).navigate(action)
         }
         buttonFilter.setOnClickListener {
