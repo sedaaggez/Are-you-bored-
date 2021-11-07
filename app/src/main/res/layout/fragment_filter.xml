@@ -5,107 +5,122 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/turquoise">
 
         <TextView
             android:id="@+id/textViewType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="50dp"
             android:text="Type: "
-            android:textColor="@color/black"
-            android:textSize="30sp"
+            android:textColor="@color/yellow"
+            android:textSize="25sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
             android:id="@+id/spinnerType"
-            android:layout_width="233dp"
-            android:layout_height="19dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:foregroundGravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewType" />
 
         <TextView
             android:id="@+id/textViewAccessibility"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="25dp"
             android:text="Accessibility:"
-            android:textColor="@color/black"
-            android:textSize="30sp"
+            android:textColor="@color/yellow"
+            android:textSize="25sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewType" />
+            app:layout_constraintTop_toBottomOf="@+id/spinnerType" />
 
         <Switch
             android:id="@+id/switchAccessibility"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="56dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerType" />
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAccessibility" />
 
         <TextView
             android:id="@+id/textViewParticipants"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="25dp"
             android:text="Participants:"
-            android:textColor="@color/black"
-            android:textSize="30sp"
+            android:textColor="@color/yellow"
+            android:textSize="25sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewAccessibility" />
+            app:layout_constraintTop_toBottomOf="@+id/switchAccessibility" />
 
         <EditText
             android:id="@+id/editTextParticipants"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/yellow"
             android:ems="10"
             android:inputType="number"
             android:text="0"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/switchAccessibility" />
+            android:textColor="@color/yellow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewParticipants" />
 
         <TextView
             android:id="@+id/textViewPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="25dp"
             android:text="Price:"
-            android:textColor="@color/black"
-            android:textSize="30sp"
+            android:textColor="@color/yellow"
+            android:textSize="25sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewParticipants" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextParticipants" />
 
         <EditText
             android:id="@+id/editTextTextPrice"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/yellow"
             android:ems="10"
             android:inputType="number"
             android:text="0"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextParticipants" />
+            android:textColor="@color/yellow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPrice" />
 
         <Button
             android:id="@+id/buttonSave"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="32dp"
             android:text="Save"
+            android:textColor="@color/yellow"
+            android:textSize="25sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewPrice" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPrice" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
