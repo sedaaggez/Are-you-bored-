@@ -10,4 +10,12 @@ interface ActivityAPI {
     @GET("/api/activity/")
     fun getActivity(): Single<Activity>
 
+    @GET("/api/activity")
+    fun getFilterActivity(
+        @Query("type") type: String,
+        @Query("participants") participants: Int,
+        @Query("price") price: Float,
+        @Query("accessibility") accessibility: Float
+    ): Single<Activity>
+
 }

@@ -41,6 +41,29 @@ class ActivityViewModel(application: Application) : BaseViewModel(application){
         )
     }
 
+    fun getDataFilter(type: String, participants: Int, price: Float, accessibility: Float) {
+        activityError.value = false
+        disposable.add(
+            activityAPIService.getFilterActivity(type, participants, price, accessibility)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(object : DisposableSingleObserver<Activity>() {
+                    override fun onSuccess(t: Activity) {
+                        activity.value = t
+                        activityError.value = false
+                        activityLoading.value = false
+                    }
+
+                    override fun onError(e: Throwable) {
+                        activityError.value = true
+                        activityLoading.value = false
+                        e.printStackTrace()
+                    }
+
+                })
+        )
+    }
+
     override fun onCleared() {
         super.onCleared()
         disposable.clear()

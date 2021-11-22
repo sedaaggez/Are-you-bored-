@@ -44,16 +44,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/spinnerType" />
 
-        <Switch
-            android:id="@+id/switchAccessibility"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewAccessibility" />
-
         <TextView
             android:id="@+id/textViewParticipants"
             android:layout_width="wrap_content"
@@ -65,7 +55,7 @@
             android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/switchAccessibility" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextAccessibility" />
 
         <EditText
             android:id="@+id/editTextParticipants"
@@ -95,7 +85,7 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextParticipants" />
 
         <EditText
-            android:id="@+id/editTextTextPrice"
+            android:id="@+id/editTextPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -103,7 +93,7 @@
             android:backgroundTint="@color/yellow"
             android:ems="10"
             android:inputType="number"
-            android:text="0"
+            android:text="0.0"
             android:textColor="@color/yellow"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewPrice" />
@@ -120,7 +110,23 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPrice" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextPrice" />
+
+        <EditText
+            android:id="@+id/editTextAccessibility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/yellow"
+            android:ems="10"
+            android:inputType="number"
+            android:text="0.05"
+            android:textColor="@color/yellow"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAccessibility" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

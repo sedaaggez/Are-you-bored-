@@ -22,6 +22,18 @@
         <argument
             android:name="isRandom"
             app:argType="boolean" />
+        <argument
+            android:name="type"
+            app:argType="string" />
+        <argument
+            android:name="participants"
+            app:argType="integer" />
+        <argument
+            android:name="price"
+            app:argType="float" />
+        <argument
+            android:name="accessibility"
+            app:argType="float" />
     </fragment>
 
     <fragment

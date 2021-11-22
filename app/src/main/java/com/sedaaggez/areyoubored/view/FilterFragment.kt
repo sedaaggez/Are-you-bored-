@@ -6,11 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import com.sedaaggez.areyoubored.R
+import com.sedaaggez.areyoubored.viewmodel.ActivityViewModel
+import kotlinx.android.synthetic.main.fragment_activity.*
 import kotlinx.android.synthetic.main.fragment_filter.*
 
 class FilterFragment : Fragment() {
+
+    private var isRandom = false
+    private var type = "Education"
+    private var participants = 0
+    private var price = 0.0f
+    private var accessibility = 0.05f
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,10 +34,27 @@ class FilterFragment : Fragment() {
         val types = resources.getStringArray(R.array.type).toList()
         spinnerType.adapter = ArrayAdapter(requireContext(), R.layout.spinner_item, types)
 
+
         buttonSave.setOnClickListener {
-            val action = FilterFragmentDirections.actionFilterFragmentToActivityFragment(false)
+            type = spinnerType.selectedItem.toString()
+            participants = editTextParticipants.text.toString().toInt()
+            price = editTextPrice.text.toString().toFloat()
+            accessibility = editTextAccessibility.text.toString().toFloat()
+
+            println("filter")
+            println(type)
+            println(participants)
+            println(price)
+            println(accessibility)
+
+            val action = FilterFragmentDirections.actionFilterFragmentToActivityFragment(
+                isRandom,
+                type,
+                participants,
+                price,
+                accessibility
+            )
             Navigation.findNavController(it).navigate(action)
-            // TODO: add arguments
         }
 
     }

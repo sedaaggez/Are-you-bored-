@@ -14,6 +14,10 @@ class ActivityFragment : Fragment() {
 
     private lateinit var viewModel: ActivityViewModel
     private var isRandom = false
+    private var type = "Education"
+    private var participants = 0
+    private var price = 0.0f
+    private var accessibility = 0.0f
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,10 +33,21 @@ class ActivityFragment : Fragment() {
 
         arguments?.let {
             isRandom = ActivityFragmentArgs.fromBundle(it).isRandom
+            type = ActivityFragmentArgs.fromBundle(it).type
+            participants = ActivityFragmentArgs.fromBundle(it).participants
+            price = ActivityFragmentArgs.fromBundle(it).price
+            accessibility = ActivityFragmentArgs.fromBundle(it).accessibility
         }
 
         if (isRandom) {
             viewModel.getDataRandom()
+        } else {
+            println("activity")
+            println(type)
+            println(participants)
+            println(price)
+            println(accessibility)
+            viewModel.getDataFilter(type.lowercase(), participants, price, accessibility)
         }
 
         observeLiveData()
