@@ -8,8 +8,6 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.sedaaggez.areyoubored.R
 import kotlinx.android.synthetic.main.fragment_activity_selection.*
-import kotlinx.android.synthetic.main.fragment_welcome.*
-import kotlinx.android.synthetic.main.fragment_welcome.buttonYes
 
 class ActivitySelectionFragment : Fragment() {
 

@@ -6,11 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import com.sedaaggez.areyoubored.R
-import com.sedaaggez.areyoubored.viewmodel.ActivityViewModel
-import kotlinx.android.synthetic.main.fragment_activity.*
 import kotlinx.android.synthetic.main.fragment_filter.*
 
 class FilterFragment : Fragment() {
@@ -40,12 +37,6 @@ class FilterFragment : Fragment() {
             participants = editTextParticipants.text.toString().toInt()
             price = editTextPrice.text.toString().toFloat()
             accessibility = editTextAccessibility.text.toString().toFloat()
-
-            println("filter")
-            println(type)
-            println(participants)
-            println(price)
-            println(accessibility)
 
             val action = FilterFragmentDirections.actionFilterFragmentToActivityFragment(
                 isRandom,
