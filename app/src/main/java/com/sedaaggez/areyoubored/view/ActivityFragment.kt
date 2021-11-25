@@ -42,11 +42,6 @@ class ActivityFragment : Fragment() {
         if (isRandom) {
             viewModel.getDataRandom()
         } else {
-            println("activity")
-            println(type)
-            println(participants)
-            println(price)
-            println(accessibility)
             viewModel.getDataFilter(type.lowercase(), participants, price, accessibility)
         }
 
