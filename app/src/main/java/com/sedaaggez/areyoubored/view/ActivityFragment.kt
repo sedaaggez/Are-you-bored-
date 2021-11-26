@@ -53,7 +53,11 @@ class ActivityFragment : Fragment() {
 
         viewModel.activity.observe(viewLifecycleOwner, { activity ->
             activity?.let {
-                textViewActivity.text = activity.activity
+                if(it.activity == null) {
+                    textViewActivity.text = "No activity found with the specified parameters"
+                } else {
+                    textViewActivity.text = activity.activity
+                }
                 progressBar.visibility = View.GONE
                 textViewError.visibility = View.GONE
                 imageViewActivity.visibility = View.VISIBLE
