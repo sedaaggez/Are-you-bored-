@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.sedaaggez.areyoubored.R
+import com.sedaaggez.areyoubored.databinding.FragmentActivityBinding
 import com.sedaaggez.areyoubored.viewmodel.ActivityViewModel
 import kotlinx.android.synthetic.main.fragment_activity.*
 
@@ -19,11 +21,19 @@ class ActivityFragment : Fragment() {
     private var price = 0.0f
     private var accessibility = 0.0f
 
+    private lateinit var dataBinding: FragmentActivityBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_activity, container, false)
+        dataBinding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_activity,
+            container,
+            false
+        )
+        return dataBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -53,10 +63,10 @@ class ActivityFragment : Fragment() {
 
         viewModel.activity.observe(viewLifecycleOwner, { activity ->
             activity?.let {
-                if(it.activity == null) {
+                if(activity.activity == null) {
                     textViewActivity.text = "No activity found with the specified parameters"
                 } else {
-                    textViewActivity.text = activity.activity
+                    dataBinding.activity = activity
                 }
                 progressBar.visibility = View.GONE
                 textViewError.visibility = View.GONE

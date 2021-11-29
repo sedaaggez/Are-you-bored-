@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.ActivityFragment">
+
+    <data>
+        <variable
+            name="activity"
+            type="com.sedaaggez.areyoubored.model.Activity" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,6 +24,7 @@
             android:layout_marginBottom="124dp"
             android:gravity="left"
             android:inputType="textMultiLine"
+            android:text="@{activity.activity.toString()}"
             android:lines="4"
             android:maxLines="4"
             android:singleLine="false"
